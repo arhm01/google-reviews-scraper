@@ -1,0 +1,141 @@
+HOW TO GET GOOGLE RATINGS FOR A LIST OF BUSINESSES
+==================================================
+
+This tool takes a Google Sheet of businesses (like an Apollo export) and finds
+each business's Google star rating, number of reviews, and Google listing link.
+
+It works on Mac and Windows. You don't need to type any commands.
+
+
+BEFORE YOU START: get the folder onto your computer
+---------------------------------------------------
+You need the whole folder, not just one file.
+
+From GitHub: on the project page, click the green "Code" button, then
+"Download ZIP".
+
+Then unzip it:
+   Mac: double-click the .zip.
+   Windows: right-click the .zip, choose "Extract All", then click "Extract".
+Put the folder somewhere easy to find, like the Desktop. (It may be called
+something like "google-reviews-scraper-main". The name doesn't matter.)
+
+
+STEP 1. Let the tool read your sheet
+------------------------------------
+1. Open your Google Sheet.
+2. Click the "Share" button (top right).
+3. Under "General access", choose "Anyone with the link", set to "Viewer".
+4. Click "Done".
+
+
+STEP 2. Copy the link to the tab you want
+-----------------------------------------
+1. Click the tab at the bottom of the sheet that you want (for example "Dental").
+2. Click the address bar at the top of your browser and copy the whole link.
+
+   The sheet needs a column with the business name (like "Company Name").
+   A street address, city or state column makes the results more accurate.
+
+
+STEP 3. Run the tool
+--------------------
+1. Open the folder.
+2. Double-click the file for your computer:
+      Mac:      "Get Google Reviews (Mac)"
+      Windows:  "Get Google Reviews (Windows)"
+   A window with text opens.
+
+   If you see a warning instead:
+      Mac ("can't be opened" or "Apple could not verify"): click "Done",
+         open System Settings > Privacy & Security, scroll down and click
+         "Open Anyway" next to the file's name. (On older Macs: right-click
+         the file, choose "Open", then click "Open" again.)
+      Windows ("Windows protected your PC"): click "More info", then
+         "Run anyway".
+
+3. Paste the link you copied and press Enter.
+   (Windows: right-click inside the window to paste, or press Ctrl+V.)
+4. Type a name for the results (for example: Dental) and press Enter.
+5. Wait. You'll see one line per business as it goes.
+   - Roughly 100 businesses take 5 to 10 minutes.
+   - Keep the window open and the laptop open. Plug in the charger for big lists.
+   - Sometimes it says "Google showed a captcha. Pausing 10 min". That's normal.
+     Leave it alone; it carries on by itself.
+
+When it's done, a folder window opens with your results file selected
+(inside the "Results" folder, named after what you typed).
+
+To do another tab, paste the next link. To finish, press Enter on an empty line.
+
+
+THE VERY FIRST TIME on a computer
+---------------------------------
+The first run spends a few minutes setting itself up. It only does this once.
+
+Mac: if it asks to install "command line developer tools", click Install, wait
+until it finishes, then double-click "Get Google Reviews (Mac)" again.
+
+Windows: the computer needs Python (free). If the window says Python isn't
+installed:
+   1. Go to https://www.python.org/downloads/ and click the yellow Download button.
+   2. Open the file you downloaded.
+   3. On the first screen, TICK THE BOX "Add python.exe to PATH" (important),
+      then click "Install Now".
+   4. When it says "Setup was successful", close it and double-click
+      "Get Google Reviews (Windows)" again.
+
+
+STEP 4. Put the results into Google Sheets
+------------------------------------------
+1. Open your Google Sheet.
+2. Click File > Import > Upload, and choose the results file.
+3. Under "Import location", choose "Insert new sheet(s)".
+4. Click "Import data".
+
+A new tab appears with all your original columns plus:
+
+   Google Rating         the star rating, for example 4.8
+   Google Reviews        how many reviews, for example 1,120
+   Google Business Link  click it to open the business on Google Maps
+   Match Check           how sure the match is (see below)
+   Google Listing Name   the business name as Google shows it
+   Google Address        the address as Google shows it
+
+(You can also just double-click the results file to open it in Excel or Numbers.)
+
+
+WHAT "MATCH CHECK" MEANS
+------------------------
+   match                          The name and town agree. Safe to use.
+   match (no reviews on Google)   The listing exists but has no reviews yet.
+   check: Google shows "..."      Google found a business with a different name
+                                  or in a different town. Click the Google
+                                  Business Link to see if it's really the same
+                                  business before you use the numbers.
+   not found on Google Maps       No listing was found.
+
+
+IF SOMETHING GOES WRONG
+-----------------------
+"Couldn't download the sheet"
+   The sheet isn't shared. Do Step 1 again.
+
+It stopped with "Google is blocking lookups for now"
+   Nothing is lost. Wait about an hour, run it again with the SAME link and
+   the SAME name, and it carries on from where it stopped.
+
+The laptop went to sleep or the window was closed
+   Run it again with the same link and the same name. It skips everything it
+   already looked up.
+
+It found the wrong business for some rows
+   Those rows say "check" in Match Check. Adding a street address or city
+   column to your sheet makes the matches more accurate.
+
+"Setup didn't finish"
+   Check the internet connection and run it again.
+
+Mac: double-clicking does nothing, or it opens in a text editor
+   Open the Terminal app, type  bash  followed by a space, drag the
+   "Get Google Reviews (Mac)" file into the Terminal window, and press Enter.

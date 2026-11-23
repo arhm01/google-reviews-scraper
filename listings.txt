@@ -1,0 +1,5 @@
+# One listing per line: a Google Maps URL, a share link, or the business name + city.
+# Lines starting with # are ignored.
+Eiffel Tower
+Joe's Pizza 7 Carmine St New York
+https://www.google.com/maps/place/Statue+of+Liberty/@40.6892494,-74.0445004,17z

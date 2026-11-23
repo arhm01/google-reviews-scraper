@@ -1,0 +1,14 @@
+# Python / setup
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+# Your data stays on your computer: results, progress files and tab lists
+out/
+Results/
+*.csv
+*.cache.json
+*.cache.json.tmp
+pace.json
+tabs.txt
